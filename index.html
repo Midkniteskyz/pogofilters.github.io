@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokémon GO Filter Presets</title>
+  <meta
+    name="description"
+    content="Copy-ready Pokémon GO search strings for cleanup, PvP, trades, raids, and collection management."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-block">
+        <p class="eyebrow">Static utility site</p>
+        <h1>Pokémon GO Filter Presets</h1>
+        <p class="hero-copy">
+          Copy-ready search strings for cleanup, PvP, trading, raids, and collection review.
+        </p>
+      </div>
+
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+          Theme
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="toolbar">
+    <div class="container toolbar-inner">
+      <label class="search-field">
+        <span class="sr-only">Search presets</span>
+        <input
+          id="preset-search"
+          type="search"
+          placeholder="Search presets, terms, or tags..."
+          autocomplete="off"
+        />
+      </label>
+
+      <div class="quick-picks" id="quick-picks" aria-label="Popular presets"></div>
+    </div>
+  </section>
+
+  <nav class="category-nav" aria-label="Preset categories">
+    <div class="container category-row" id="category-row"></div>
+  </nav>
+
+  <main id="main-content" class="page-main">
+    <div class="container main-layout">
+      <section class="content-column">
+        <div class="results-header">
+          <div>
+            <p class="section-kicker">Browse</p>
+            <h2>Presets</h2>
+            <p id="results-summary" class="results-summary">
+              Loading presets...
+            </p>
+          </div>
+        </div>
+
+        <div id="preset-grid" class="preset-grid"></div>
+
+        <div id="empty-state" class="empty-state is-hidden">
+          <h3>No presets match</h3>
+          <p>Try a different search term or switch back to All categories.</p>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="panel live-preview" aria-labelledby="preview-heading">
+          <p class="panel-kicker">Selected preset</p>
+          <h2 id="preview-heading">Live preview</h2>
+
+          <p id="preview-name" class="preview-name">Select a preset</p>
+
+          <div class="preview-query">
+            <p class="preview-label">Query</p>
+            <pre><code id="preview-query">Choose a preset to see the full query.</code></pre>
+          </div>
+
+          <p id="preview-description" class="preview-note">
+            Preset details will appear here.
+          </p>
+
+          <div id="preview-tags" class="tag-row"></div>
+
+          <div class="panel-actions">
+            <button id="copy-preview" class="btn btn-primary" type="button">
+              Copy query
+            </button>
+          </div>
+        </section>
+
+        <section class="panel syntax-help" aria-labelledby="syntax-heading">
+          <p class="panel-kicker">Reference</p>
+          <h2 id="syntax-heading">Search syntax help</h2>
+
+          <ul class="syntax-list">
+            <li><strong>&amp;</strong> = match both terms</li>
+            <li><strong>|</strong> = also works for combined matching</li>
+            <li><strong>!</strong> = exclude a term</li>
+            <li><strong>, : ;</strong> = OR operator</li>
+            <li><strong>-</strong> = numeric range</li>
+            <li><strong>+</strong> = evolutionary line search</li>
+          </ul>
+
+          <div class="example-block">
+            <p class="example-title">Examples</p>
+            <ul class="example-list">
+              <li><code>grass&evolve</code></li>
+              <li><code>!defender</code></li>
+              <li><code>electric,@weather</code></li>
+              <li><code>cp2000-</code></li>
+              <li><code>+dragonair</code></li>
+            </ul>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Static site skeleton for GitHub Pages.</p>
+      <p class="footer-note">Review preset strings periodically as Pokémon GO search behavior evolves.</p>
+    </div>
+  </footer>
+</body>
+</html>

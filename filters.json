@@ -1,0 +1,92 @@
+[
+  {
+    "id": "safe-transfer-cleanup",
+    "name": "Safe transfer cleanup",
+    "category": "cleanup",
+    "description": "Low-value Pokémon, excluding favorites and common valuables.",
+    "query": "0*,1*,2*&!favorite&!shiny&!legendary&!mythical",
+    "tags": ["Beginner", "Cleanup", "Safe"],
+    "notes": "Good first-pass cleanup filter before you bulk transfer."
+  },
+  {
+    "id": "appraisal-cleanup",
+    "name": "Appraisal cleanup",
+    "category": "cleanup",
+    "description": "Quick pass for lower-appraisal Pokémon before manual review.",
+    "query": "0*,1*,2*",
+    "tags": ["Beginner", "Review"],
+    "notes": "Broad filter with no protection rules added."
+  },
+  {
+    "id": "great-league-candidates",
+    "name": "Great League candidates",
+    "category": "pvp",
+    "description": "Pull likely lower-CP candidates for manual PvP review.",
+    "query": "cp10-1500&!favorite",
+    "tags": ["PvP", "Great League"],
+    "notes": "This is a rough screen, not a ranking tool."
+  },
+  {
+    "id": "ultra-league-candidates",
+    "name": "Ultra League candidates",
+    "category": "pvp",
+    "description": "Review mid-range CP options that may fit Ultra League.",
+    "query": "cp1500-2500&!favorite",
+    "tags": ["PvP", "Ultra League"],
+    "notes": "A quick storage scan for likely UL candidates."
+  },
+  {
+    "id": "distance-trade-prep",
+    "name": "Distance trade prep",
+    "category": "trade",
+    "description": "Find Pokémon caught far away for trade bonus planning.",
+    "query": "distance100-&!favorite",
+    "tags": ["Trade", "Distance"],
+    "notes": "Useful when preparing long-distance trades."
+  },
+  {
+    "id": "recent-trade-batch",
+    "name": "Recent trade batch",
+    "category": "trade",
+    "description": "Show recent catches that are easy to review for trades.",
+    "query": "age0-30&!favorite",
+    "tags": ["Trade", "Recent"],
+    "notes": "Good for scanning new catches before transfer."
+  },
+  {
+    "id": "raid-ready",
+    "name": "Raid-ready attackers",
+    "category": "raid",
+    "description": "Surface stronger Pokémon for raid team review.",
+    "query": "3*,4*&!favorite",
+    "tags": ["Raid", "Attackers"],
+    "notes": "Simple quality-based raid review filter."
+  },
+  {
+    "id": "evolve-and-new",
+    "name": "New Pokédex evolve check",
+    "category": "collection",
+    "description": "Show Pokémon that can evolve and may add a new Pokédex entry.",
+    "query": "evolve&evolvenew",
+    "tags": ["Collection", "Dex"],
+    "notes": "Useful when checking for new evolution entries."
+  },
+  {
+    "id": "shiny-review",
+    "name": "Shiny review",
+    "category": "collection",
+    "description": "Quick filter for shiny storage review.",
+    "query": "shiny",
+    "tags": ["Collection", "Shiny"],
+    "notes": "A basic collection management filter."
+  },
+  {
+    "id": "tagged-exclusion",
+    "name": "Exclude tagged keepers",
+    "category": "advanced",
+    "description": "Filter out a keeper tag from larger cleanup searches.",
+    "query": "0*,1*,2*&!#Keep",
+    "tags": ["Advanced", "Tags"],
+    "notes": "Tag exclusion can help protect your custom keeper groups."
+  }
+]
