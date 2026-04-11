@@ -126,7 +126,7 @@ function renderPreview(item) {
   previewQuery.textContent = item.query;
   previewDescription.textContent = item.notes || item.description;
   previewTags.innerHTML = (item.tags || [])
-    .map((tag) => `<span class="tag">${tag}</span>`)
+    .map((tag) => `<span class="tag">#${tag.toLowerCase()}</span>`)
     .join("");
 }
 
@@ -175,7 +175,7 @@ function renderGrid() {
           <pre class="query-block"><code>${item.query}</code></pre>
 
           <div class="tag-row">
-            ${(item.tags || []).map((tag) => `<span class="tag">${tag}</span>`).join("")}
+            ${(item.tags || []).map((tag) => `<span class="tag">#${tag.toLowerCase()}</span>`).join("")}
           </div>
 
           <div class="card-actions">
@@ -253,7 +253,7 @@ async function init() {
     state.filters = await response.json();
     state.selectedId = state.filters[0]?.id || null;
 
-    renderQuickPicks();
+    // renderQuickPicks();
     renderAll();
   } catch (error) {
     resultsSummary.textContent = "Could not load presets.";
